@@ -1,0 +1,39 @@
+ALGORITHM Hash_discints_elements
+VAR
+    HASH_TABLE<INTEGER,INTEGER>
+    sum:INTEGER;
+    n,m:INTEGER;
+    arr1:ARRAY_OF INTEGER[n];
+    arr2:ARRAY_OF INTEGER[m];
+BEGIN
+    sum := 0;
+// loop through the first array
+FOR i FROM 0 TO n - 1 STEP 1  DO
+    element = arr1[i];
+    IF (HASH_TABLE[element]) THEN
+        HASH_TABLE[element] = HASH_TABLE[element] + 1;
+    ELSE
+        HASH_TABLE[element] := 1;
+    END_IF
+END_FOR
+
+// loop through the second array
+
+FOR i FROM 0 TO m - 1 STEP 1  DO
+    element = arr2[i];
+    IF (HASH_TABLE[element]) THEN
+        HASH_TABLE[element] = HASH_TABLE[element] + 1;
+    ELSE
+        HASH_TABLE[element] := 1;
+    END_IF
+END_FOR
+
+FOR key in HASH_TABLE
+    IF (HASH_TABLE[key] = 1) THEN
+        sum := sum + number(key)
+    END_IF
+END_FOR
+
+write(sum)
+
+END
